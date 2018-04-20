@@ -15,15 +15,15 @@ public class GetWeatherDetails_1
 	public void verifyWeatherDetails_statusCode()
 	{
 		
-		RestAssured.baseURI="http://restapi.demoqa.com/utilities/weather/city";
+		RestAssured.baseURI="http://qas.qmetry.com/struts2-rest-showcase-2.3.16.3/orders";
 		RequestSpecification httprequest = RestAssured.given();
-		Response response = httprequest.request(Method.GET, "/jabalpur");
+		Response response = httprequest.request(Method.GET, "/52.json");
 		int statuscode = response.getStatusCode();
 		System.out.println("StatusCode ::"+statuscode);
 		Assert.assertEquals(statuscode , 200 , "Correct status code returned");
 		 String statusLine = response.getStatusLine();
 		 System.out.println(" StatusLine ::"+statusLine);
-		 Assert.assertEquals(statusLine , "HTTP/1.1 200 OK" , "Correct status line returned");
+		 Assert.assertEquals(statusLine , "HTTP/1.1 200 " , "Correct status line returned");
 		 
 		
 		

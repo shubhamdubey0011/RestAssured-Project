@@ -12,7 +12,7 @@ public class GetWeatherDetails {
 	@Test
 	public void GetWeatherDetails() {
 		// Specify the base URL to the RESTful web service
-		RestAssured.baseURI = "http://restapi.demoqa.com/utilities/weather/city";
+		RestAssured.baseURI = "http://qas.qmetry.com/struts2-rest-showcase-2.3.16.3/orders";
 
 		// Get the RequestSpecification of the request that you want to sent
 		// to the server. The server is specified by the BaseURI that we have
@@ -23,13 +23,13 @@ public class GetWeatherDetails {
 		// method URL.
 		// This will return the Response from the server. Store the response in
 		// a variable.
-		Response response = httpRequest.request(Method.GET, "/Hyderabad");
+		Response response = httpRequest.request(Method.GET, "/98.json");
 
 		// Now let us print the body of the message to see what response
 		// we have recieved from the server
 		String responseBody = response.getBody().asString();
 		System.out.println("Status Code:: "+response.getStatusCode());
-		System.out.println("Response Body is =>  " + responseBody);
+		System.out.println("Response Body is =>  " + response.getBody().asString());
 
 	}
 
